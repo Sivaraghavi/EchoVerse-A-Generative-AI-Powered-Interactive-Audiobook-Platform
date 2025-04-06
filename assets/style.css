@@ -1,3 +1,401 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburgerbtn {
+    background: none;
+    border: none;
+    color: #FF0000;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 24px;
+    color: #FF0000;
+}
+
+.uploadbtn {
+    background: #FF0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.sideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #2c3e50;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.sideBar.hidden {
+    transform: translateX(-250px);
+}
+
+.navlink {
+    display: block;
+    color: #f0f0f0;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.navlink:hover {
+    background-color: #34495e;
+}
+
+.content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    min-height: calc(100vh - 60px);
+}
+
+.welcomemessage {
+    font-size: 28px;
+    color: #FF0000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.searchbar {
+    width: 50%;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: none;
+    background-color: #333333;
+    color: #f0f0f0;
+    text-align: center;
+    display: block;
+}
+
+.title {
+    font-size: 24px;
+    color: #FF0000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bookgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.bookcard {
+    background: #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bookcard:hover {
+    transform: scale(1.05);
+}
+
+.bookcover {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.booktitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.booksummary {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.selectbtn {
+    background: #FF0000;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.selectbtn:hover {
+    background: #C0392B;
+}
+
+.bookcoverlarge {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+}
+
+.chapterdropdown {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #333333;
+    color: #f0f0f0;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.chaptertext {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.narratebtn {
+    background: #FF0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.narratebtn:hover {
+    background: #C0392B;
+}
+
+.chattitle {
+    margin-top: 20px;
+    color: #FF0000;
+    text-align: center;
+}
+
+.speakbtn, .sendbtn {
+    background: #FF0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.2s;
+}
+
+.speakbtn:hover, .sendbtn:hover {
+    background: #C0392B;
+}
+
+.chatinput {
+    width: 50%;
+    height: 100px;
+    margin-top: 10px;
+    background: #333333;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.chathistory {
+    margin-top: 20px;
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.fanficprompt {
+    width: 70%;
+    height: 100px;
+    background: #333333;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+}
+
+.visibility {
+    margin: 10px auto;
+    color: #FF0000;
+    text-align: center;
+}
+
+.generatebtn {
+    background: #FF0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.generatebtn:hover {
+    background: #C0392B;
+}
+
+.fanficoutput {
+    white-space: pre-wrap;
+    margin-top: 20px;
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.librarytitle {
+    margin-top: 20px;
+    color: #FF0000;
+    text-align: center;
+}
+
+.fanficlibrary {
+    margin-top: 20px;
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.streakcalendar {
+    margin: 20px auto;
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.activitygraph {
+    margin: 20px auto;
+    width: 80%;
+    background: #2c3e50;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.recstitle {
+    margin-top: 20px;
+    color: #FF0000;
+    text-align: center;
+}
+
+.recommendations {
+    font-size: 18px;
+    margin-top: 20px;
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.footer {
+    background: #2c3e50;
+    padding: 20px;
+    text-align: center;
+}
+
+.socialdevelopercontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.socialicons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s;
+}
+
+.socialicons img:hover {
+    transform: scale(1.1);
+}
+
+.developer {
+    display: flex;
+    align-items: center;
+}
+
+.developerimg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #FF0000;
+}
+
+.developertext {
+    font-size: 16px;
+    color: #FF0000;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Abstract Art Background  
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/abstract_art.svg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.15;
+    z-index: -1;
+} 
+
+/* body {
+    background-color: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 20px;
+} */ 
+
 /* Global Styles */
 body {
     margin: 0;
